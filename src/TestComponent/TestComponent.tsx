@@ -1,16 +1,19 @@
-import React from "react";
+import React from 'react';
+import styled from 'styled-components';
 
-import { TestComponentProps } from "./TestComponent.types";
+import { TestComponentProps } from './TestComponent.types';
 
-import "./TestComponent.css";
+const StyledTestComponent = styled.div`
+  background: orange;
+`;
 
 const TestComponent: React.FC<TestComponentProps> = ({ heading, content }) => (
-  <div data-testid="test-component" className="test-component">
+  <StyledTestComponent data-testid="test-component" className="test-component">
     <h1 data-testid="test-component__heading" className="heading">
       {heading}
     </h1>
     <div data-testid="test-component__content">{content}</div>
-  </div>
+  </StyledTestComponent>
 );
 
 export default TestComponent;
